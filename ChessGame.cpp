@@ -5,6 +5,7 @@ using namespace std;
 
 int main()
 {
+    // Creating board
     string board[8][8] = {};
     int board_size = AS(board);
     int turn = 1; // 0 = black      1 = white
