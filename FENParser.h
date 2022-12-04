@@ -21,29 +21,58 @@ void print_board(string board[8][8], int board_size)
 
 void decode_fen(string code, string board[8][8])
 {
-    int row = 7;
-    int col = 0;
-
-    for (int i = 0; i < code.length(); i++)
+    int i = 0, j = 0;
+    for (int k = 0; k < code.length(); k++)
     {
-        if (code[i] == '/')
+        if (code[k] == '/')
         {
-            row--;
-            col = 0;
+            i++;
+            j = 0;
         }
-        else if (isdigit(code[i]))
+        else if (code[k] >= '1' && code[k] <= '8')
         {
-            int num = code[i] - '0';
-            for (int j = 0; j < num; j++)
+            for (int u = 0; u < code[k] - '0'; u++)
             {
-                board[row][col] = ".";
-                col++;
+                board[i][j] = ".";
+                j++;
             }
         }
         else
         {
-            board[row][col] = piece_from_code(code[i]);
-            col++;
+            board[i][j] = piece_from_code(code[k]);
+            j++;
         }
     }
+}
+
+string encode_fen(string board[8][8])
+{
+    string code = "";
+    for (int i = 0; i < 8; i++)
+    {
+        int empty_count = 0;
+        for (int j = 0; j < 8; j++)
+        {
+            if (board[i][j] == ".")
+            {
+                empty_count++;
+            }
+            else
+            {
+                if (empty_count > 0)
+                {
+                    code += to_string(empty_count);
+                    empty_count = 0;
+                }
+                code += piece_to_code(board[i][j]);
+            }
+        }
+        if (empty_count > 0)
+        {
+            code += to_string(empty_count);
+        }
+        code += "/";
+    }
+    code.erase(code.length() - 1);
+    return code;
 }
