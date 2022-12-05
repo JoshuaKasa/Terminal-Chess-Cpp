@@ -25,6 +25,7 @@ bool validate_turn(int turn, string piece_moved)
         }
         return true;
     }
+    return true;
 }
 
 bool execute_move(string move, string board[8][8], int turn)
@@ -56,6 +57,7 @@ bool execute_move(string move, string board[8][8], int turn)
                     {
                         board[y1][x1] = ".";
                         board[y2][x2] = moved_piece;
+                        return true;
                     }
                     else
                     {
@@ -72,6 +74,7 @@ bool execute_move(string move, string board[8][8], int turn)
                     {
                         board[y1][x1] = ".";
                         board[y2][x2] = moved_piece;
+                        return true;
                     }
                     else
                     {
@@ -88,6 +91,7 @@ bool execute_move(string move, string board[8][8], int turn)
                     {
                         board[y1][x1] = ".";
                         board[y2][x2] = moved_piece;
+                        return true;
                     }
                     else
                     {
@@ -104,6 +108,7 @@ bool execute_move(string move, string board[8][8], int turn)
                     {
                         board[y1][x1] = ".";
                         board[y2][x2] = moved_piece;
+                        return true;
                     }
                     else
                     {
@@ -120,6 +125,7 @@ bool execute_move(string move, string board[8][8], int turn)
                     {
                         board[y1][x1] = ".";
                         board[y2][x2] = moved_piece;
+                        return true;
                     }
                     else
                     {
@@ -136,6 +142,7 @@ bool execute_move(string move, string board[8][8], int turn)
                     {
                         board[y1][x1] = ".";
                         board[y2][x2] = moved_piece;
+                        return true;
                     }
                     else
                     {

@@ -10,7 +10,7 @@ int main()
     int board_size = AS(board);
     int turn = 1; // 0 = black      1 = white
 
-    decode_fen("rnb1kbnr/pppppppp/8/1q6/8/3PP3/PPP2PPP/RNBQKBNR",board);
+    decode_fen("1nbqkbnr/pppppppp/8/3r4/8/8/PPPPPPPP/RNBQKBNR",board);
     print_board(board, board_size);
 
     // Getting move
