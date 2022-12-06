@@ -155,6 +155,17 @@ bool execute_move(string move, string board[8][8], int turn)
         }
         else
         {
+            if (piece_can_block(board, x1,y1, x2,y2, turn) == true)
+            {
+                board[y1][x1] = ".";
+                board[y2][x2] = moved_piece;
+                return true;
+            }
+            else
+            {
+                cout << "\nPiece can't block";
+                return false;
+            }
             cout << "\nKing is threatened";
             return false;
         }
