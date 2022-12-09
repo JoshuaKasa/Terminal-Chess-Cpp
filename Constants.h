@@ -12,4 +12,5 @@
 #define LOOPDE(i, n) for (int i = n; i >= 0; i--)
 #define LOOPD(i, n) for (int i = n; i > 0; i--)
 #define PRINTA(ARR) for (int i = 0; i < sizeof(ARR)/sizeof(*ARR); i++) cout << ARR[i] << " "
+#define EL while (1 == 1)
 #define LTN(letter) (int)letter - 'a' + 1
